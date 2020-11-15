@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Anthology profile</title>
+</head>
+<body>
+    <h1>List of Anthologies</h1>
+
+    <div>
+        <button type="button">
+            <a href="/listar">List</a>
+        </button>
+        <button type="button">
+            <a href="/listar/antologiaM/" th:href="@{/listar/antologiaM/__${id}__}">Edit</a>
+        </button>
+        <button type="button">
+            <a href="/listar/antologiaD/" th:href="@{/listar/antologiaD/__${id}__}">Delete</a>
+        </button>
+        <button type="button">
+            <a href="/insertarArticulo/" th:href="@{/insertarArticulo/__${id}__}">Add article</a>
+        </button>
+    </div>
+
+    <div>
+        <ul>
+            <div>
+                <li>
+                    <h1><span th:text="${title}">Name</span></h1>
+                    <h3><span th:text="${subTitle}"></span></h3>
+                    <h5><span th:text="${publishedDate}"></span></h5>
+                    <hr>
+                    <hr>
+                </li>
+            </div>
+        </ul>
+    </div>
+
+    <div>
+        <ul>
+            <div th:each="entry : ${articles}">
+                <li>
+                    <h4>
+                        <p>Código: <span th:text="${entry.id}">Id</span></p>
+                        <p>Nombre: <span th:text="${entry.name}">Name</span></p>
+                        <hr>
+                    </h4>
+                </li>
+            </div>
+        </ul>
+    </div>
+</body>
+</html>

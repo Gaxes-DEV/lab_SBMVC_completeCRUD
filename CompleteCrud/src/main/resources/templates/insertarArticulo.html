@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Article</title>
+</head>
+<body>
+<div>
+    <h1>Insert:</h1>
+    <form action="#" th:action="@{/insertarArticulo/__${id}__}" th:object="${article}" method="post">
+        <label for="name">Article name</label>
+        <input type="text" th:field="*{name}" id="name">
+
+        <p><input type="submit" value="Add"></p>
+    </form>
+</div>
+</body>
+</html>

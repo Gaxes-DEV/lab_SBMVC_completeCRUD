@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Anthology</title>
+</head>
+<body>
+<div>
+    <h1>Insert:</h1>
+    <form action="#" th:action="@{/insertar}" th:object="${antology}" method="post">
+        <input type="text" th:field="*{id}" id="id" hidden>
+
+        <label for="name">Name</label>
+        <input type="text" th:field="*{name}" id="name">
+
+        <label for="subTitle">Sub title</label>
+        <input type="text" th:field="*{subTitle}" id="subTitle">
+
+        <label for="publishedDate">Publication date</label>
+        <input type="date" th:field="*{publishedDate}" id="publishedDate">
+
+        <p><input type="submit" value="Add Anthology"></p>
+    </form>
+</div>
+</body>
+</html>
